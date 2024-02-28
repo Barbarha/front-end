@@ -1,4 +1,4 @@
-//capturar os eventos doformulário 
+//capturar os eventos do formulário 
 const formulario = document.querySelector('#formulario');
 
 formulario.addEventListener('submit', function(e){ //a função aguarda o usuario clicar no botão
@@ -13,7 +13,10 @@ formulario.addEventListener('submit', function(e){ //a função aguarda o usuari
 
     const imc = calcularImc(peso, altura)// azendo a chamada da função
 
-    console.log(imc)
+    
+    const classificação = tabelaimc(imc) //estou chamando a função tabela imc
+    resultado(classificação)
+
 
 })
 
@@ -21,4 +24,21 @@ formulario.addEventListener('submit', function(e){ //a função aguarda o usuari
 function calcularImc(peso, altura){
     let imc = (peso / altura **2 ); //formula do imc
     return imc.toFixed(2); //toFixed(2) foi usado para formatar o numero em 2 casas decimais//
+}
+//mostar resultado na rela//
+function resultado (mensaagem){
+    const resultado = document.querySelector("#resultado");
+    resultado.innerHTML = mensaagem
+
+}
+
+//função pa classificação em qual grau de imc a pessoa está
+function tabelaimc(imc){
+    const classificação = ['abaixo do peso','peso normal','sobrepeso','obesidade grau I','obesidade grau II','obesidade grauIII']
+    if (imc >= 39.9)return classificação [5];
+    if (imc >=34.9)return classificação [4];
+    if (imc >= 29.9)return classificação [3];  
+    if (imc>=24.9)return classificação [2];
+    if (imc>=18.5) return classificação [1];
+    if (imc <18.5)return classificação [0];
 }
