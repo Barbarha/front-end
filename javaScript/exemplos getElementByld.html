@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Modificar o conteúdo de um elemento</h1>
+    <div id="meuElemento">Conteudo inicial</div>
+    <button onclick="modificar()">Mudar</button>
+    <hr>
+    <h1>Alterar o estilo do elemento</h1>
+    <div id="cor">Texto colorido</div>
+    <button onclick="colorir()">colorir</button>
+<hr>
+    <input id="texto" type="text" value="texto inicial">
+    <button onclick="pegar()">Pegar texto</button>
+    <p id="conteudo"></p>
+    <hr>
+    <h1>esconteder elemento </h1>
+    <div class="esconder">Texto para esconder</div>
+    <button onclick="esconderTexto()">Esconder</button>
+    <button onclick="aparecerElemento()">aparecer</button>
+
+
+</body>
+    <script>
+        function esconderTexto(){
+            var elemento = document.getElementById("esconder");
+            elemento.style.display = "none";
+        }
+        
+        function aparecerElemento(){
+            
+        }
+        function pegar(){
+            var elemento = document.getElementById("texto");
+            var valor = input.value;
+            console.log(elemento)
+        }
+
+        function modificar(){
+            var elemento = document.getElementById("meuElemento");
+            elemento.innerHTML = "Babi";
+    }
+</script>
+</html>
